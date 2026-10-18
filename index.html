@@ -1,303 +1,279 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DigiWork - Services digitaux</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="./logo.jpg">
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1379742324245915');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1379742324245915&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <style>
-    :root{
-      --bg:#0b0710;
-      --panel:#0f0b14;
-      --accent:#8b5cf6;
-      --accent-2:#6d28d9;
-      --muted:#9aa0a6;
-      --card:#121018;
-      --glass: rgba(255,255,255,0.03);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%; scroll-behavior:smooth;}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6e6ee;background:linear-gradient(180deg,var(--bg),#07040a 60%);-webkit-font-smoothing:antialiased}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DigiWork – Agence de Social Media Management</title>
+<meta name="description" content="DigiWork gère vos réseaux sociaux : posts, reels et stories. Offres à partir de 800 DH / mois.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --lime:#A9D63B;--lime-d:#7fa51d;--soft:#E3F0C3;--ink:#04140A;--bg:#F6F6FA;--card:#fff;--line:#DADDE3;--muted:#4f5f50;--navbg:rgba(246,246,250,.88);--dark:#04140A;--dark-t:#F1F5EC;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--soft:#26351a;--ink:#F1F5EC;--bg:#0A120B;--card:#131D14;--line:#2A372B;--muted:#a9b8a6;--navbg:rgba(10,18,11,.88);--dark:#050B06}}
+:root[data-theme="dark"]{--soft:#26351a;--ink:#F1F5EC;--bg:#0A120B;--card:#131D14;--line:#2A372B;--muted:#a9b8a6;--navbg:rgba(10,18,11,.88);--dark:#050B06}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(78px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin:0 0 14px}
+.eyebrow:before{content:"";width:38px;height:6px;border-radius:3px;background:var(--lime)}
+h2{font-size:clamp(30px,5vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:0 0 16px}
+.lead{color:var(--muted);max-width:34em;margin:0 0 48px}
+.btn{display:inline-block;border:2px solid var(--lime);cursor:pointer;font:600 15px 'Poppins',system-ui,sans-serif;background:var(--lime);color:#04140A;padding:13px 28px;border-radius:999px;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(.95);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.block{display:block;width:100%;text-align:center}
 
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;top:0;position:relative;z-index:1002;}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;overflow:hidden;}
-    .logo img{width:80px;height:80px;}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
-    nav a.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 14px;border-radius:10px;color:white}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:var(--navbg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:700;color:var(--lime-d)}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;align-items:center;font-size:14px;font-weight:500}
+nav a:hover{color:var(--lime-d)}
+nav .btn{padding:9px 22px;font-size:14px;color:#04140A}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;color:var(--ink)}
+.burger span{display:block;width:22px;height:2px;background:currentColor;margin:5px auto;border-radius:2px}
 
-    /* Responsive Menu */
-    .menu-btn{display:none;background:none;border:none;color:white;font-size:28px;cursor:pointer;z-index:1003;}
-    .nav-wrapper{transition:right 0.3s ease;}
-    @media (max-width:820px){
-      .menu-btn{display:block;}
-      .nav-wrapper{position:fixed;top:0;right:-100%;width:65%;height:100vh;background:rgba(15,11,20,0.95);backdrop-filter:blur(8px);transition:right 0.3s ease;padding-top:100px;box-shadow:-4px 0 20px rgba(0,0,0,0.4);z-index:1001;}
-      .nav-wrapper.open{right:0;}
-      nav{display:flex;flex-direction:column;align-items:center;}
-      nav a{margin:16px 0;font-size:18px;}
-    }
+/* hero */
+.hero{padding:150px 0 96px;position:relative;overflow:hidden}
+.blob{position:absolute;top:-140px;right:-120px;width:460px;height:460px;border-radius:50%;background:var(--lime);opacity:.95}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(40px,7.5vw,78px);font-weight:800;letter-spacing:-.03em;line-height:1.02;margin:0 0 22px;max-width:11em}
+.hero h1 em{font-style:normal;color:var(--lime-d)}
+.hero p{font-size:clamp(16px,2.2vw,19px);color:var(--muted);max-width:30em;margin:0 0 34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:48px}
+.pills span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:13px;font-weight:600}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:60px 0}
-    .hero-left h1{font-size:36px;margin:0 0 12px;color:#fff}
-    .hero-left p{color:var(--muted);margin:0 0 18px}
-    .buttons{display:flex;gap:12px}
-    .btn{padding:10px 16px;border-radius:10px;font-weight:700;border:none;cursor:pointer}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    .hero-right{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:10px;border-radius:16px;border:1px solid rgba(255,255,255,0.04)}
-    .hero-img{width:100%;height:360px;background:url(./hero.png) center/cover no-repeat;border-radius:12px}
+/* services */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px 26px}
+.ic{width:52px;height:52px;border-radius:15px;background:var(--soft);display:grid;place-items:center;margin-bottom:20px}
+.ic svg{width:26px;height:26px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.box h3{font-size:19px;margin:0 0 8px}
+.box p{margin:0;color:var(--muted);font-size:14.5px}
 
-    /* Stats */
-    .stats{display:flex;gap:18px;margin-top:16px}
-    .stat{background:var(--card);padding:12px 16px;border-radius:10px;text-align:center;min-width:90px}
-    .stat .num{font-weight:800;color:#fff}
-    .stat .label{font-size:12px;color:var(--muted)}
+/* process */
+.dark{background:var(--dark);color:var(--dark-t)}
+.dark .lead{color:#a9b8a6}
+.num{font-size:44px;font-weight:800;color:var(--lime);line-height:1;margin-bottom:14px}
+.dark .box{background:#0d1a0f;border-color:#1f2e21}
+.dark .box p{color:#a9b8a6}
 
-    /* Services */
-    section h2{color:#fff;margin:0 0 10px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
-    .card{background:var(--panel);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.03)}
-    .card h3{margin:0 0 8px}
-    .card p{color:var(--muted);margin:0 0 12px;font-size:14px}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));font-size:13px;color:var(--muted)}
+/* offers */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:30px 26px}
+.plan.rec{border:3px solid var(--lime);box-shadow:0 20px 44px rgba(0,0,0,.13);padding-top:38px}
+.tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--lime);color:#04140A;font-size:11px;font-weight:700;letter-spacing:.2em;padding:5px 18px;border-radius:999px;white-space:nowrap}
+.pn{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin:0 0 14px}
+.price{display:inline-block;background:var(--lime);color:#04140A;font-size:40px;font-weight:800;line-height:1;padding:10px 20px;border-radius:16px}
+.per{font-weight:700;font-size:13px;margin:10px 0 18px}
+.plan hr{border:0;border-top:1px solid var(--line);margin:0 0 18px}
+.plan ul{list-style:none;padding:0;margin:0 0 18px}
+.plan li{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:15px}
+.plan li .ic{width:38px;height:38px;border-radius:11px;margin:0;flex:none}
+.plan li .ic svg{width:20px;height:20px}
+.plan .d{font-size:13.5px;color:var(--muted);margin:0 0 22px}
 
-    /* Works gallery */
-    .works{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-    .work-item{height:160px;border-radius:10px;background:#0b0b0b;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.contact .lead{margin-bottom:0}
+.form{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px}
+.f{margin-bottom:20px}
+label,.lab{display:block;font-weight:600;font-size:14px;margin:0 0 6px}
+input[type=text],select,textarea{width:100%;font:400 15px 'Poppins',system-ui,sans-serif;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:13px 15px}
+textarea{min-height:100px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--soft);border-color:var(--lime)}
+.radios{display:flex;gap:12px;flex-wrap:wrap}
+.radios label{display:flex;align-items:center;gap:8px;margin:0;font-weight:500;background:var(--bg);border:1.5px solid var(--line);border-radius:999px;padding:10px 20px;cursor:pointer}
+.radios input{accent-color:var(--lime-d)}
+.err{color:#c0392b;font-size:13px;margin:0 0 14px;display:none}
+.ok{display:none;margin:16px 0 0;background:var(--soft);border-radius:14px;padding:14px 16px;font-size:14px}
 
-    /* Pricing */
-    .pricing{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);margin-top:12px}
-    .price{flex:1;background:linear-gradient(180deg, rgba(109,40,217,0.06), transparent);padding:16px;border-radius:12px;border:1px solid rgba(109,40,217,0.14)}
-    .price .amount{font-size:22px;font-weight:800}
+footer{background:var(--dark);color:var(--dark-t);padding:48px 0 36px}
+.fgrid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
+footer ul a:hover{color:var(--lime)}
+footer .logo{color:var(--lime)}
+.copy{border-top:1px solid #1f2e21;margin-top:32px;padding-top:22px;font-size:13px;color:#a9b8a6;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-    /* Contact */
-    .contact{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
-    form input, form textarea, form select{
-      width:100%;
-      padding:12px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,0.04);
-      background:transparent;
-      color:#fff;
-      margin-bottom:10px;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      font-size:14px;
-    }
-    form select option{color:var(--muted); background-color: var(--card); padding-top: 5px; border-radius: 10px;}
-    form button{width:100%;padding:12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:white;font-weight:700}
-
-    footer{margin-top:32px;padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
-
-    /* Responsive general */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr;}
-      .grid-3{grid-template-columns:1fr 1fr}
-      .works{grid-template-columns:1fr 1fr}
-      .contact{grid-template-columns:1fr}
-      .pricing{grid-template-columns: 1fr 1fr;}
-    }
-    @media (max-width:560px){
-      .grid-3{grid-template-columns:1fr}
-      .works{grid-template-columns:1fr}
-      .pricing{grid-template-columns: 1fr;}
-    }
-  </style>
+@media(max-width:860px){
+  section{padding:64px 0}
+  .cards3,.plans,.contact{grid-template-columns:1fr}
+  .plans{max-width:440px;margin:0 auto}
+  .contact{gap:32px}
+  .burger{display:block}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 24px 20px;align-items:stretch}
+  nav ul.open{display:flex}
+  nav li{padding:12px 0;border-bottom:1px solid var(--line)}
+  nav li:last-child{border:0;padding-top:16px}
+  nav .btn{display:block;text-align:center}
+  .hero{padding:120px 0 72px}
+  .blob{width:260px;height:260px;top:-110px;right:-90px}
+  .form{padding:24px 20px}
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo"><img src="./logo.jpg" alt="DigiWork Logo"></div>
-        <div>
-          <div style="font-weight:800;color:white">DigiWork</div>
-          <div style="font-size:12px;color:var(--muted)">Services digitaux</div>
-        </div>
-      </div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="post" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="9" cy="9" r="1.6"/><path d="M4 17l5-4 4 3 3-2.5 4 3"/></symbol>
+  <symbol id="reel" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M3.5 9h17M9 3.5l3 5.5M15 3.5l3 5.5"/><path d="M10.5 12.5v5l4-2.5z"/></symbol>
+  <symbol id="story" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3 2.5"/><path d="M12 8.5v7M8.5 12h7"/></symbol>
+</svg>
 
-      <button class="menu-btn" aria-label="Menu">&#9776;</button>
-
-      <div class="nav-wrapper">
-        <nav>
-          <a href="#services">Services</a>
-          <a href="#works-section">Réalisations</a>
-          <a href="#pricing">Tarifs</a>
-          <a class="cta" href="#contact">Me contacter</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-left">
-          <h1>Je crée des supports digitaux professionnels</h1>
-          <p>Rapports de stage, présentations de soutenance, CV (classiques & ATS), cartes de visite et menus pour restaurants/cafés. Livraison rapide + fichiers prêts à imprimer.</p>
-
-          <div class="buttons">
-            <button class="btn btn-primary" onclick="location.href='#contact'">Commander maintenant</button>
-            <button class="btn btn-ghost" onclick="location.href='#works-section'">Voir mes travaux</button>
-          </div>
-
-          <div class="stats">
-            <div class="stat"><div class="num">+600</div><div class="label">Pages créées</div></div>
-            <div class="stat"><div class="num">+37</div><div class="label">Clients</div></div>
-            <div class="stat"><div class="num">35h</div><div class="label">Délai moyen</div></div>
-          </div>
-        </div>
-
-        <aside class="hero-right">
-          <div class="hero-img" aria-hidden="true"></div>
-        </aside>
-      </section>
-
-      <section id="services">
-        <h2>Mes services</h2>
-        <p style="color:var(--muted);margin-top:6px">Choisissez le service qui vous convient. Toutes les livraisons incluent 1 à 2 révisions selon le pack.</p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Rapport de stage</h3>
-            <p>Mise en page A4 professionnelle, sommaire interactif, export PDF prêt à imprimer.</p>
-            <div class="badge">À partir de 100Dh</div>
-          </div>
-
-          <div class="card">
-            <h3>Présentation de soutenance</h3>
-            <p>Slides 16:9 (PPTX), animations simples, notes du présentateur et export vidéo (option).</p>
-            <div class="badge">À partir de 150Dh FCFA</div>
-          </div>
-
-          <div class="card">
-            <h3>CV ATS</h3>
-            <p>Version visuelle (PDF) + version ATS compatible (Word/TXT). Optimisation mots-clés.</p>
-            <div class="badge">À partir de 100Dh</div>
-          </div>
-
-          <div class="card">
-            <h3>Pack étudiant</h3>
-            <p>Rapport + présentation + CV — remise spéciale pour étudiants.</p>
-            <div class="badge">Pack personnalisé</div>
-          </div>
-
-          <div class="card">
-            <h3>Portfolio & landing pages</h3>
-            <p>Création de portfolios et landing pages.</p>
-            <div class="badge">À partir de 120Dh</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="works-section">
-        <h2 style="margin-top:26px">Réalisations récentes</h2>
-        <p style="color:var(--muted);margin-top:6px">Cliquez pour voir les projets en grand (images de démonstration).</p>
-
-        <div class="works">
-          <div class="work-item"><a href="./rapport_de_stage.pdf" style="text-decoration:none;color:var(--muted);" target="_blank">Rapport — Projet marketing</a></div>
-          <div class="work-item"><a href="./presentation_de_soutenance.pdf" style="text-decoration:none;color:var(--muted);" target="_blank">Présentation — Soutenance mémoire</a></div>
-          <div class="work-item"><a href="./CV_classic.pdf" style="text-decoration:none;color:var(--muted);" target="_blank">CV moderne — Développeur</a></div>
-          <div class="work-item"><a href="./CV_ats.pdf" style="text-decoration:none;color:var(--muted);" target="_blank">CV ATS — Recrutement</a></div>
-          <div class="work-item"><a href="https://portfolio-smoky-phi-84.vercel.app/" style="text-decoration:none;color:var(--muted);" target="_blank">Création de portfolio & Landing page</a></div>
-        </div>
-      </section>
-
-      <section id="pricing">
-        <h2 style="margin-top:26px">Tarifs indicatifs</h2>
-        <p style="color:var(--muted);margin-top:6px">Prix de base, personnalisations disponibles après brief.</p>
-
-        <div class="pricing">
-          <div class="price card">
-            <div class="amount">100Dh</div>
-            <div style="color:var(--muted);margin-top:6px">Rapport de stage (20 pages) — 2 révisions</div>
-          </div>
-
-          <div class="price card">
-            <div class="amount">200Dh</div>
-            <div style="color:var(--muted);margin-top:6px">Présentation (20 slides) — Animations Avancer</div>
-          </div>
-
-          <div class="price card">
-            <div class="amount">100Dh</div>
-            <div style="color:var(--muted);margin-top:6px"> CV ATS — 2 modification</div>
-          </div>
-
-          <div class="price card">
-            <div class="amount">120Dh</div>
-            <div style="color:var(--muted);margin-top:6px">Création de Portfolio / Langing Page </div>
-          </div>
-        </div>
-
-        <p style="color:var(--muted);font-size:13px;margin-top:10px">Remise pour étudiants. Contactez pour devis détaillé.</p>
-      </section>
-
-      <section id="contact">
-        <h2 style="margin-top:26px">Contactez-moi</h2>
-        <div class="contact">
-          <form action="https://formspree.io/f/xblpgqep" method="POST" class="card">
-            <input type="text" placeholder="Votre nom" name="Full Name" required />
-            <input type="email" placeholder="Votre email" name="Email" required />
-
-            <select name="Service" required>
-              <option value="" disabled selected>Choisissez un service</option>
-              <option value="Rapport — Projet marketing">Rapport — Projet marketing</option>
-              <option value="Présentation — Soutenance mémoire">Présentation — Soutenance mémoire</option>
-              <option value="CV moderne — Développeur">CV moderne — Développeur</option>
-              <option value="CV ATS — Recrutement">CV ATS — Recrutement</option>
-              <option value="UI & UX Design">UI & UX Design</option>
-              <option value="Création de Portfolio & Landing page">Création de Portfolio & Landing page</option>
-            </select>
-
-            <textarea rows="5" placeholder="Message / brief rapide" name="Message"></textarea>
-            <button type="submit">Envoyer la demande</button>
-          </form>
-
-          <aside class="card" style="display:flex;flex-direction:column;gap:10px;justify-content:center">
-            <div style="color:var(--muted)">Téléphone : +212 70 426 7509</div>
-            <div style="color:var(--muted)">Email : salmichahid15@gmail.com</div>
-            <div style="color:var(--muted)">Délai moyen : 24–72 heures selon le projet</div>
-          </aside>
-        </div>
-      </section>
-
-      <footer>
-        © <span id="year"></span> Chahid Salmi — Services digitaux • Tous droits réservés
-      </footer>
-    </main>
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">DigiWork</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav><ul id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#methode">Méthode</a></li>
+      <li><a href="#offres">Offres</a></li>
+      <li><a href="#contact" class="btn">Nous contacter</a></li>
+    </ul></nav>
   </div>
+</header>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+<main id="top">
+  <section class="hero">
+    <div class="blob"></div>
+    <div class="wrap">
+      <p class="eyebrow">Social Media Management</p>
+      <h1>Développez votre <em>présence digitale.</em></h1>
+      <p>DigiWork prend en charge vos réseaux sociaux : posts, reels et stories, pour que vous puissiez vous concentrer sur votre activité.</p>
+      <div class="cta"><a href="#offres" class="btn">Voir nos offres</a><a href="#contact" class="btn ghost">Demander un devis</a></div>
+      <div class="pills"><span>Posts</span><span>Reels</span><span>Stories</span><span>Facebook &amp; Instagram</span></div>
+    </div>
+  </section>
 
-    const menuBtn = document.querySelector('.menu-btn');
-    const navWrapper = document.querySelector('.nav-wrapper');
+  <section id="services">
+    <div class="wrap">
+      <p class="eyebrow">Nos services</p>
+      <h2>Tout pour animer vos réseaux.</h2>
+      <p class="lead">Un contenu régulier et cohérent avec votre marque, publié sur vos comptes chaque mois.</p>
+      <div class="cards3">
+        <div class="box"><div class="ic"><svg><use href="#post"/></svg></div><h3>Posts</h3><p>Des visuels soignés qui présentent votre activité et renforcent votre image de marque.</p></div>
+        <div class="box"><div class="ic"><svg><use href="#reel"/></svg></div><h3>Reels</h3><p>Des vidéos courtes et dynamiques pour gagner en visibilité et toucher plus de monde.</p></div>
+        <div class="box"><div class="ic"><svg><use href="#story"/></svg></div><h3>Stories</h3><p>Une présence quotidienne pour garder le contact avec votre communauté.</p></div>
+      </div>
+    </div>
+  </section>
 
-    menuBtn.addEventListener('click', () => {
-      navWrapper.classList.toggle('open');
-      menuBtn.innerHTML = navWrapper.classList.contains('open') ? '&times;' : '&#9776;';
-    });
-  </script>
+  <section id="methode" class="dark">
+    <div class="wrap">
+      <p class="eyebrow">Notre méthode</p>
+      <h2>Simple, du premier échange à la publication.</h2>
+      <p class="lead">Trois étapes pour démarrer.</p>
+      <div class="cards3">
+        <div class="box"><div class="num">01</div><h3>On échange</h3><p>Vous nous présentez votre commerce, vos comptes et vos objectifs.</p></div>
+        <div class="box"><div class="num">02</div><h3>On choisit l’offre</h3><p>Starter, Standard ou Premium : selon le volume de contenu dont vous avez besoin.</p></div>
+        <div class="box"><div class="num">03</div><h3>On publie</h3><p>Nous créons et publions votre contenu chaque mois sur vos réseaux sociaux.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offres">
+    <div class="wrap">
+      <p class="eyebrow">Nos offres</p>
+      <h2>Choisissez l’offre qui vous correspond.</h2>
+      <p class="lead">Des tarifs mensuels clairs, adaptés à la taille de votre activité.</p>
+      <div class="plans">
+        <article class="plan">
+          <p class="pn">Offre Starter</p><div class="price">800</div><p class="per">DH / mois</p><hr>
+          <ul>
+            <li><span class="ic"><svg><use href="#post"/></svg></span><span><b>6</b> posts / mois</span></li>
+            <li><span class="ic"><svg><use href="#reel"/></svg></span><span><b>4</b> reels / mois</span></li>
+            <li><span class="ic"><svg><use href="#story"/></svg></span><span><b>10–12</b> stories / mois</span></li>
+          </ul><hr>
+          <p class="d">Idéale pour les petites entreprises qui souhaitent développer leur présence sur les réseaux sociaux.</p>
+          <button class="btn ghost block" data-plan="Starter – 800 DH / mois">Choisir Starter</button>
+        </article>
+        <article class="plan rec">
+          <span class="tag">RECOMMANDÉE</span>
+          <p class="pn">Offre Standard</p><div class="price">1300</div><p class="per">DH / mois</p><hr>
+          <ul>
+            <li><span class="ic"><svg><use href="#post"/></svg></span><span><b>10</b> posts / mois</span></li>
+            <li><span class="ic"><svg><use href="#reel"/></svg></span><span><b>8</b> reels / mois</span></li>
+            <li><span class="ic"><svg><use href="#story"/></svg></span><span><b>15–20</b> stories / mois</span></li>
+          </ul><hr>
+          <p class="d">Idéale pour les marques qui veulent publier régulièrement et renforcer leur visibilité.</p>
+          <button class="btn block" data-plan="Standard – 1300 DH / mois">Choisir Standard</button>
+        </article>
+        <article class="plan">
+          <p class="pn">Offre Premium</p><div class="price">2000</div><p class="per">DH / mois</p><hr>
+          <ul>
+            <li><span class="ic"><svg><use href="#post"/></svg></span><span><b>15</b> posts / mois</span></li>
+            <li><span class="ic"><svg><use href="#reel"/></svg></span><span><b>12</b> reels / mois</span></li>
+            <li><span class="ic"><svg><use href="#story"/></svg></span><span><b>25–30</b> stories / mois</span></li>
+          </ul><hr>
+          <p class="d">Idéale pour les entreprises qui souhaitent renforcer leur présence digitale avec un contenu plus intensif.</p>
+          <button class="btn ghost block" data-plan="Premium – 2000 DH / mois">Choisir Premium</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Parlons de votre projet.</h2>
+        <p class="lead">Remplissez le formulaire : votre demande arrive directement sur WhatsApp et nous vous répondons rapidement.</p>
+      </div>
+      <div class="form">
+        <div class="f"><label for="nom">Nom et prénom</label><input type="text" id="nom" autocomplete="name" placeholder="Votre nom complet"></div>
+        <div class="f"><label for="biz">Nom de votre commerce / entreprise</label><input type="text" id="biz" autocomplete="organization" placeholder="Nom de votre commerce"></div>
+        <div class="f"><label for="plan">Offre souhaitée</label>
+          <select id="plan"><option value="">Choisissez une offre</option><option>Starter – 800 DH / mois</option><option>Standard – 1300 DH / mois</option><option>Premium – 2000 DH / mois</option></select>
+        </div>
+        <div class="f"><span class="lab">Êtes-vous déjà actif sur les réseaux sociaux ?</span>
+          <div class="radios"><label><input type="radio" name="actif" value="Oui"> Oui</label><label><input type="radio" name="actif" value="Non"> Non</label></div>
+        </div>
+        <div class="f"><label for="liens">Liens de vos comptes Facebook / Instagram</label><textarea id="liens" placeholder="https://instagram.com/…&#10;https://facebook.com/…"></textarea></div>
+        <p class="err" id="err">Veuillez remplir tous les champs obligatoires.</p>
+        <button class="btn block" id="send" type="button">Envoyer ma demande</button>
+        <p class="ok" id="ok">Merci ! WhatsApp s’est ouvert avec votre demande, il suffit de l’envoyer.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <a href="#top" class="logo">DigiWork</a>
+      <ul><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#offres">Offres</a></li><li><a href="#contact">Contact</a></li></ul>
+    </div>
+    <div class="copy"><span>Votre présence digitale, notre priorité.</span><span>© 2026 DigiWork. Tous droits réservés.</span></div>
+  </div>
+</footer>
+
+<script>
+// ⚠️ Remplacez par votre numéro WhatsApp (format international, sans + ni espaces)
+var WHATSAPP_NUMBER = "212704267509";
+var $ = function(id){return document.getElementById(id)};
+$('burger').addEventListener('click', function(){ $('menu').classList.toggle('open'); });
+$('menu').addEventListener('click', function(e){ if(e.target.tagName==='A') $('menu').classList.remove('open'); });
+document.querySelectorAll('[data-plan]').forEach(function(b){
+  b.addEventListener('click', function(){
+    $('plan').value = b.getAttribute('data-plan');
+    $('contact').scrollIntoView({behavior:'smooth'});
+  });
+});
+$('send').addEventListener('click', function(){
+  var nom=$('nom').value.trim(), biz=$('biz').value.trim(), plan=$('plan').value,
+      r=document.querySelector('input[name=actif]:checked'), liens=$('liens').value.trim();
+  if(!nom||!biz||!plan||!r){ $('err').style.display='block'; return; }
+  $('err').style.display='none';
+  var msg = "Nouvelle demande – DigiWork\n\n1. Nom : "+nom+"\n2. Commerce : "+biz+"\n3. Offre : "+plan+"\n4. Déjà actif sur les réseaux : "+r.value+"\n5. Liens des comptes : "+(liens||"—");
+  $('ok').style.display='block';
+  window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),'_blank','noopener');
+});
+</script>
 </body>
 </html>
-
-
-
-
